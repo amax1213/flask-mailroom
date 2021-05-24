@@ -1,0 +1,15 @@
+{% extends 'base.jinja2' %}
+
+{% block subtitle %}Itimized Donor Donations{% endblock subtitle %}
+
+{% block content %}
+<form method="POST">
+    {% if error %}<p>{{ error }}</p>{% endif %}
+    <label for="name-input">Username:</label><input id="name-input" type="text" name="name"><br>
+    <input type="submit" value="login">
+</form>
+<ul>
+    {% for donation in donations %}
+        <li><b>{{ donation.donor.name }}</b>: {{ donation.value }}</li>
+    {% endfor %}
+</ul>{% endblock content %}
