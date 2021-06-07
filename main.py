@@ -33,7 +33,7 @@ def create():
         return render_template('create.jinja2')
 
     if request.method == 'POST':
-        donorName = request.form['name']
+        donorName = str.capitalize(request.form['name'])
         if donorName == '':
             # no donor name entered, returns to create with an input error message
             return render_template('create.jinja2', error="No name was entered, please enter the donor's name.")
