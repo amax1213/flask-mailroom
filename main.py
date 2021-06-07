@@ -7,7 +7,7 @@ from passlib.hash import pbkdf2_sha256
 from model import Donation, Donor, User 
 
 app = Flask(__name__)
-app.secret_key = b'\x9d\xb1u\x08%\xe0\xd0p\x9bEL\xf8JC\xa3\xf4J(hAh\xa4\xcdw\x12S*,u\xec\xb8\xb8'
+#app.secret_key = b'\x9d\xb1u\x08%\xe0\xd0p\x9bEL\xf8JC\xa3\xf4J(hAh\xa4\xcdw\x12S*,u\xec\xb8\xb8'
 app.secret_key = os.environ.get('SECRET_KEY').encode()
 
 @app.route('/')
