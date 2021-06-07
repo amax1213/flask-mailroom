@@ -87,7 +87,7 @@ def single(): # may want to rename
     if request.method == 'POST':
         try:
             # checks if the donor is in the list of donors
-            donor = Donor.select().where(Donor.name == request.form['name']).get()
+            donor = Donor.select().where(Donor.name == str.capitalize(request.form['name']).get())
         except Donor.DoesNotExist:
             donor = None
             # If incorrect donor name is entered, user is redirected back to page with error message
